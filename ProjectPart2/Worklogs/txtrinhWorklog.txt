@@ -1,0 +1,18 @@
+Week of October 15th, 2019
+	
+	Worked together with team to create ER diagram
+	Reviewed and finalized ER diagram based on all needed requirements
+	
+Week of November 5th, 2019
+	
+	Worked with team to convert the entirety of ER diagram into
+		ProjectDDL.sql
+	Worked with team to write up full ProjectInsert.sql
+	Turned in Project Part 1 before due date
+
+Week of Monday, December 9th, 2019
+	- had mutiple team meetings for finished product
+    - wrote up .jsp results for all 9 to work with server
+    - login page (validation of users)
+    - 4 sql queries
+    - helped with bugs that arose with testing

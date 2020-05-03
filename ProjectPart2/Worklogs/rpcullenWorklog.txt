@@ -1,0 +1,24 @@
+Week of October 15th, 2019
+	
+	Worked together with team to create ER diagram
+	Reviewed and finalized ER diagram based on all needed requirements
+	
+Week of November 5th, 2019
+	
+	Worked with team to convert the entirety of ER diagram into
+		ProjectDDL.sql
+	Worked with team to write up full ProjectInsert.sql
+	Turned in Project Part 1 before due date
+
+Week of Monday, December 9th, 2019
+	
+	Worked and communicated with my team to accomplish the following:
+	Spent this week writing half of Before.sql
+	Wrote up the entirety of PhysicalDesign.sql
+	Wrote up the entirety of After.sql
+	Wrote up TeamWorkLog.txt
+	Wrote up PerfSQL.pdf and tested the runtimes of all 9 queries
+	Tested .jsp program and offered suggestions for quality of life
+		choices to make it easier to understand for our users
+	Wrote up rpcullenWorklog.txt
+	Turned in final project

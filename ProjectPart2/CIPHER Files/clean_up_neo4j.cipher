@@ -1,0 +1,20 @@
+//Get rid of edges from state codes and move them to state names
+match (s:State)<-[e:FROM]-(u:User)
+where s.name='FL' match (s2:State)
+where s2.name='Florida' create (u)-[:FROM]->(s2) delete e
+
+match (s:State)<-[e:FROM]-(u:User)
+where s.name='NE' match (s2:State)
+where s2.name='Nebraska' create (u)-[:FROM]->(s2) delete e
+
+//Find State nodes using state code in the name only and set the
+//name property to the full name of the state
+//AZ, IA, FL, IL, NE, SD, WI
+//Florida and Nebraska don't work because they already exist...
+match (s:State) where s.name='AZ' set s.name='Arizona'
+match (s:State) where s.name='IA' set s.name='Iowa'
+match (s:State) where s.name='IL' set s.name='Illinois'
+match (s:State) where s.name='SD' set s.name='South Dakota'
+match (s:State) where s.name='WI' set s.name='Wisconsin'
+//use this to delete the FL nodes. Do the same with NE
+match (s:State) where s.name='FL' delete s

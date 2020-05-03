@@ -1,0 +1,15 @@
+Joseph Strobel:
+
+Week of Nov. 4, 2019
+- Joined this team from another team
+- Helped write DDL schema with Riley and Ty
+- Wrote CreateDBUsers.sql
+
+Week of Dec. 2, 2019
+- Started writing cypher queries
+
+Week of Dec. 9, 2019
+- Wrote all cypher queries
+- Created the jsp project
+- Wrote query selecting page
+- Wrote nine forms for inputting query parameters

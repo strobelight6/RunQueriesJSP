@@ -1,0 +1,43 @@
+Week of October 8th, 2019
+
+Team met at 5p
+Went over project description as a group
+Current Plan:
+Work on ER diagram together on draw.io
+Create schema DDL in MYSQL
+We’ll spend the next week creating the ER diagram, the following week will be spent creating the DDL, CreateDBUsers.sql, and CreateApplicationUsers.sql
+Disbanded at 5:45p
+
+Week of October 15th, 2019
+
+Team met at 5p
+	Discussion of retweets and locations
+	Updated the ER diagram
+	Analyzed ER diagram to ensure we’re following all the constraints needed
+	Committed final ER diagram based on all requirements
+	Disbanded at 5:37p
+
+Week of November 5th, 2019
+
+	Team met at 5p
+	Went over ER diagram to be converted into ProjectDDL.sql
+	Reassign tasks with newest group member
+	Going over projecthelp.pdf together to get a better grasp of setting up .sql files.
+	Disbanded at 5:45p
+
+Week of November 19th, 2019
+
+	Team met at 3:30p
+	Received and reviewed updates to the project description for part 2
+	Started assigning parts to accomplish
+	Disbanded at 4p
+	
+Week of December 11th, 2019
+
+	Team met at 5:30
+	All members are individually getting their 3 before, physicaldesign, and after .sql files done and .cypher done for neo4j
+	Working on project .jsp
+		Using code from in class activity to get started and have a better sense of what to have for our code
+		Planning on having a main page .jsp file and then result page .jsp file that has a try catch or if else if block for all 9 of the .sql queries.
+	Started looking over requirements for individual and group contribution files
+	Disbanded at 8p

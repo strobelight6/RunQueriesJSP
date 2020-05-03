@@ -1,0 +1,63 @@
+//Cypher queries
+
+//Q1 - Joe DONE
+MATCH (u:User) - [:POSTED] -> (t:Tweet)
+WHERE t.month = '1' AND t.year = '2016'
+RETURN t.retweet_count, t.text, u.screen_name, u.category, u.sub_category
+ORDER BY toInteger(t.retweet_count) DESC
+LIMIT 5
+
+//Q3 - Joe DONE
+MATCH (s:State) <- [:FROM] - (u:User) - [:POSTED] -> (t:Tweet) <- [:TAGGED] - (h:Hashtag)
+WHERE h.name <> "" AND s.name <> "na" AND t.year = '2016'
+RETURN DISTINCT count(DISTINCT s.name) AS numstates, collect(DISTINCT s.name) AS statelist, h.name AS hashtag
+ORDER BY numstates DESC
+LIMIT 5
+
+//Q6 - Joe DONE
+MATCH (s:State) <- [:FROM] - (u:User) - [:POSTED] -> (t:Tweet) <- [:TAGGED] - (h:Hashtag)
+WHERE h.name IN ['GOPDebate', 'DemDebate']
+WITH distinct u.screen_name as screen_name, toInteger(u.followers) AS cnt, s.name as state
+RETURN screen_name, state
+ORDER BY cnt desc
+limit 5
+
+//Q9 - Joe DONE
+WITH "GOP" AS party
+MATCH (u:User)
+WHERE u.sub_category = party
+RETURN u.screen_name as screenname, party, u.followers as numfollowers
+ORDER BY toInteger(numfollowers) DESC
+LIMIT 5
+
+//Q10 - Joe DONE
+WITH ['Ohio','Alaska','Alabama'] AS states
+MATCH (s:State) <- [:FROM] - (u:User) - [:POSTED] -> (t:Tweet) <- [:TAGGED] - (h:Hashtag)
+WHERE s.name IN states AND t.month = '1' AND t.year = '2016' AND h.name <> ""
+RETURN DISTINCT toUpper(h.name), collect(distinct s.name)
+
+//Q11 - Joe DONE
+MATCH (s:State{name: 'Ohio'}) <- [:FROM] - (u:User) - [:POSTED] -> (t:Tweet) <- [:TAGGED] - (h:Hashtag{name:'Ohio'})
+where u.sub_category IN ['GOP', 'democrat'] and t.month = '1' and t.year = '2016'
+RETURN DISTINCT t.text, h.name, u.screen_name, u.sub_category
+LIMIT 5
+
+//Q15 - Joe DONE
+MATCH (s:State) <- [:FROM] - (u:User) - [:POSTED] -> (t:Tweet) - [:URL_USED] -> (l:Url)
+WHERE t.month = '1' and t.year = '2016' and l.url <> "" and u.sub_category = 'GOP'
+RETURN u.screen_name, s.name, collect(l.url)
+
+//Q18 - Joe DONE
+MATCH (pu:User{sub_category:'GOP'}) - [:POSTED] -> (t:Tweet) - [:MENTIONED] -> (mu:User) - [:FROM] -> (st:State)
+WHERE t.month = '1' AND t.year = '2016'
+WITH mu.screen_name as mentionedUser, st.name as stateOfMentionedUser, collect(DISTINCT pu.screen_name) AS listOfMentioningUsers, count(t) AS cnt
+RETURN mentionedUser, stateOfMentionedUser, listOfMentioningUsers
+ORDER BY cnt DESC
+LIMIT 5
+
+//Q23 - Joe DONE
+MATCH (u:User{sub_category:'GOP'}) - [:POSTED] -> (t:Tweet) <- [:TAGGED] - (h:Hashtag)
+WHERE t.month IN ['1', '2', '3'] AND t.year = '2016' AND h.name <> ''
+RETURN DISTINCT toUpper(h.name) AS hashtagText, count(t) AS numUses
+ORDER BY count(t) DESC
+LIMIT 5
